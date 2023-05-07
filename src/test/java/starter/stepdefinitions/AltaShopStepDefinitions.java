@@ -64,7 +64,6 @@ public class AltaShopStepDefinitions  {
     @And("{actor} input valid Email {string}")
     public void UserInputValidEmail(Actor actor, String Email) {
         actor.attemptsTo(DoAnAction.FillEmailFieldWithValue(dotenv.get(Email)));
-
     }
 
     @And("{actor} input valid Password {string}")
@@ -81,10 +80,43 @@ public class AltaShopStepDefinitions  {
                 .forNoMoreThan(Duration.ofSeconds(60)));
     }
 
-    @Then("{actor} selected category")
+    @Then("{actor} select category")
     public void userSelectedCategory(Actor actor) {
-        Target category = Target.the("category")
-                .located(By.xpath(""))
+        actor.attemptsTo(DoAnAction.clickCategoryButton());
+    }
+
+    @Then("{actor} choose one of the category")
+    public void userChooseOneOfTheCategory(Actor actor) {
+        actor.attemptsTo(DoAnAction.chooseOneOfTheCategory());
+    }
+
+    @Then("{actor} directed to furniture")
+    public void userDirectedToFurniture(Actor actor) {actor.attemptsTo(DoAnAction.directedToTheFurniture());
+    }
+
+    @Then("{actor} click detail on one product")
+    public void userClickDetailOnOneProduct(Actor actor) {actor.attemptsTo(DoAnAction.clickDetailOnOneProduct());
+
+    }
+
+    @Then("{actor} directed to the product")
+    public void userDirectedToTheProduct(Actor actor) {actor.attemptsTo(DoAnAction.directedToTheProduct());
+    }
+
+    @Then("{actor} click buy on one product")
+    public void userClickBuyOnOneProduct(Actor actor) {actor.attemptsTo(DoAnAction.clickBuyOnOneProduct());
+    }
+
+    @Then("{actor} click on cart")
+    public void userClickOnCart(Actor actor) {actor.attemptsTo(DoAnAction.clickOnCart());
+    }
+
+    @Then("{actor} pay the product")
+    public void userPayTheProduct(Actor actor) {actor.attemptsTo(DoAnAction.payTheProduct());
+    }
+
+    @Then("{actor} click on logout symbol")
+    public void userClickOnLogoutSymbol(Actor actor)  {actor.attemptsTo(DoAnAction.clickonlogoutSymbol());
     }
 }
 

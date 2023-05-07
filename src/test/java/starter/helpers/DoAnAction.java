@@ -68,6 +68,7 @@ public class DoAnAction {
                                 .forNoMoreThan(Duration.ofSeconds(60)))
         );
     }
+
     public static Performable FillPasswordFieldWithValue(String password) {
         return Task.where("{0} fill password field with " + password,
                 Enter.theValue(password)
@@ -76,4 +77,56 @@ public class DoAnAction {
                                 .forNoMoreThan(Duration.ofSeconds(60)))
         );
     }
+
+    public static Performable clickCategoryButton() {
+        return Task.where("{0} click category button",
+                Click.on(AltaPage.Category_Button)
+        );
+    }
+    public static Performable chooseOneOfTheCategory() {
+        return Task.where("{0} choose one of the categories",
+                Click.on(AltaPage.Choose_Category_Button)
+        );
+    }
+
+    public static Performable directedToTheFurniture() {
+        return Task.where("{0} directed to the furniture",
+                Click.on(AltaPage.Furniture_Page)
+        );
+    }
+
+    public static Performable clickDetailOnOneProduct() {
+        return Task.where("{0} click detail on one product",
+                Click.on(AltaPage.Detail_Field)
+        );
+    }
+
+    public static Performable directedToTheProduct() {
+        return Task.where("{0} directed to the product",
+                Click.on(AltaPage.Product_Page)
+        );
+    }
+
+    public static Performable clickBuyOnOneProduct() {
+        return Task.where("{0} directed to the product",
+                Click.on(AltaPage.Buy_Product)
+        );
+    }
+    public static Performable clickOnCart() {
+        return Task.where("{0} click on",
+                Click.on(AltaPage.Cart_Page)
+        );
+    }
+    public static Performable payTheProduct() {
+        return Task.where("{0} pay the product",
+                Click.on(AltaPage.Pay_the_product_page)
+        );
+    }
+    public static Performable clickonlogoutSymbol(){
+        return Task.where("{0} logged out",
+                Click.on(AltaPage.Logout_symbol)
+        );
+    }
+
 }
+
