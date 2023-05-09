@@ -78,9 +78,9 @@ public class DoAnAction {
         );
     }
 
-    public static Performable clickCategoryButton() {
+    public static Performable clickSelectCategory() {
         return Task.where("{0} click category button",
-                Click.on(AltaPage.Category_Button)
+                Click.on(AltaPage.Select_Category)
         );
     }
     public static Performable chooseOneOfTheCategory() {
@@ -97,10 +97,15 @@ public class DoAnAction {
 
     public static Performable clickDetailOnOneProduct() {
         return Task.where("{0} click detail on one product",
-                Click.on(AltaPage.Detail_Field)
+                Click.on(AltaPage.Detail_Button)
         );
     }
 
+    public static Performable clickonRating() {
+        return Task.where("{0} click on rating stars",
+                Click.on(AltaPage.Rating_Stars)
+        );
+    }
     public static Performable directedToTheProduct() {
         return Task.where("{0} directed to the product",
                 Click.on(AltaPage.Product_Page)
@@ -115,6 +120,18 @@ public class DoAnAction {
     public static Performable clickOnCart() {
         return Task.where("{0} click on",
                 Click.on(AltaPage.Cart_Page)
+        );
+    }
+
+    public static Performable clickonaddSymbol(){
+        return Task.where("{0} add symbol",
+                Click.on(AltaPage.Add_Symbol)
+        );
+    }
+
+    public static Performable clickondetractSymbol(){
+        return Task.where("{0} detract symbol",
+                Click.on(AltaPage.Detract_Symbol)
         );
     }
     public static Performable payTheProduct() {

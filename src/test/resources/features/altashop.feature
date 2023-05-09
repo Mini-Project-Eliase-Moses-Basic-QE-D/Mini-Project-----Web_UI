@@ -18,7 +18,26 @@ Feature: Alta Shop Home
     And User click login
     Then User directed to dashboard
 
-  @SelectCategory @NormalPositive @ChoosingCategoryAtAltaShopSuccess
+  @OpenCategory @NormalPositive @ClickCategory
+  Scenario: User selecting category of product
+    Given User is on Alta Login Page
+    And User input valid Email "Email"
+    And User input valid Password "Password"
+    And User click login
+    Then User directed to dashboard
+    Then User select category
+
+  @SelectCategory @NormalPositive @ChoosingCategory
+  Scenario: User choosing category of product
+    Given User is on Alta Login Page
+    And User input valid Email "Email"
+    And User input valid Password "Password"
+    And User click login
+    Then User directed to dashboard
+    Then User select category
+    Then User choose one of the category
+
+  @CategoryPage @NormalPositive @ProductCategoryPage
   Scenario: User selecting category of product
     Given User is on Alta Login Page
     And User input valid Email "Email"
@@ -39,6 +58,17 @@ Feature: Alta Shop Home
     Then User click detail on one product
     Then User directed to the product
 
+  @ProductRating @NormalPositive @AssignRating
+  Scenario: User click stars button to rate a product
+    Given User is on Alta Login Page
+    And User input valid Email "Email"
+    And User input valid Password "Password"
+    And User click login
+    Then User directed to dashboard
+    Then User click detail on one product
+    Then User directed to the product
+    Then User assigned rating on product
+
   @BuyProduct @NormalPositive @PurchaseProduct
   Scenario: User purchasing a product
     Given User is on Alta Login Page
@@ -57,6 +87,28 @@ Feature: Alta Shop Home
     Then User directed to dashboard
     Then User click buy on one product
     Then User click on cart
+
+  @Transaction @NormalPositive @AddProduct
+  Scenario: User add product on cart that already buy
+    Given User is on Alta Login Page
+    And User input valid Email "Email"
+    And User input valid Password "Password"
+    And User click login
+    Then User directed to dashboard
+    Then User click buy on one product
+    Then User click on cart
+    Then User click add product quality
+
+  @Transaction @NormalPositive @DetractProduct
+  Scenario: User detract product on cart that already buy
+    Given User is on Alta Login Page
+    And User input valid Email "Email"
+    And User input valid Password "Password"
+    And User click login
+    Then User directed to dashboard
+    Then User click buy on one product
+    Then User click on cart
+    Then User click detract product quality
 
   @Transaction @NormalPositive @PayProduct
   Scenario: User pay the product on the cart

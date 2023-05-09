@@ -82,7 +82,7 @@ public class AltaShopStepDefinitions  {
 
     @Then("{actor} select category")
     public void userSelectedCategory(Actor actor) {
-        actor.attemptsTo(DoAnAction.clickCategoryButton());
+        actor.attemptsTo(DoAnAction.clickSelectCategory());
     }
 
     @Then("{actor} choose one of the category")
@@ -117,6 +117,18 @@ public class AltaShopStepDefinitions  {
 
     @Then("{actor} click on logout symbol")
     public void userClickOnLogoutSymbol(Actor actor)  {actor.attemptsTo(DoAnAction.clickonlogoutSymbol());
+    }
+
+    @Then("{actor} click add product quality")
+    public void userClickAddProductQuality(Actor actor) {actor.attemptsTo(DoAnAction.clickonaddSymbol());
+    }
+
+    @Then("{actor} click detract product quality")
+    public void userClickDetractProductQuality(Actor actor) {actor.attemptsTo(DoAnAction.clickondetractSymbol());
+    }
+
+    @Then("{actor} assigned rating on product")
+    public void userAssignedRatingOnProduct(Actor actor) {actor.attemptsTo(DoAnAction.clickonRating());
     }
 }
 
